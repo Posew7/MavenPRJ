@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./template.xhtml">
+
+            <ui:define name="content">
+
+                <h:form id="paraCevirmeForm">
+                    <div align="left">
+
+                        <p:panelGrid columns="4">
+                            <p:outputLabel value="PARANIZ"/>
+                            <p:outputLabel value="ALIŞ"/>
+                            <p:outputLabel value="SATIŞ"/>
+                            <p:outputLabel value="BİRİM"/>
+                            
+                            <p:inputText value="#{araclarMB.turkLirasi}"/>
+                            <p:inputText value="#{araclarMB.turkLirasiAlis}"/>
+                            <p:inputText value="#{araclarMB.turkLirasiSatis}"/>
+                            <p:outputLabel value="Türk Lirası"/>
+                            <p:inputText value="#{araclarMB.euro}"/>
+                            <p:inputText value="#{araclarMB.euroAlis}"/>
+                            <p:inputText value="#{araclarMB.euroSatis}"/>
+                            <p:outputLabel value="Euro"/>
+                            <p:inputText value="#{araclarMB.dolar}"/>
+                            <p:inputText value="#{araclarMB.dolarAlis}"/>
+                            <p:inputText value="#{araclarMB.dolarSatis}"/>
+                            <p:outputLabel value="Dolar"/>
+                            <p:inputText value="#{araclarMB.sterlin}"/>
+                            <p:inputText value="#{araclarMB.sterlinAlis}"/>
+                            <p:inputText value="#{araclarMB.sterlinSatis}"/>
+                            <p:outputLabel value="Sterlin"/>
+
+                            <f:facet name="footer">
+                                <div align="center">
+                                    <p:commandButton value="TÜRK LİRASI" action="#{araclarMB.turkLirasiCevir()}" update="paraCevirmeForm"/>
+                                    <p:commandButton value="EURO" action="#{araclarMB.euroCevir()}" update="paraCevirmeForm"/>
+                                    <p:commandButton value="DOLAR" action="#{araclarMB.dolarCevir()}" update="paraCevirmeForm"/>
+                                    <p:commandButton value="STERLİN" action="#{araclarMB.sterlinCevir()}" update="paraCevirmeForm"/>
+                                </div>
+                            </f:facet>
+                        </p:panelGrid>
+
+                    </div>
+                </h:form>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

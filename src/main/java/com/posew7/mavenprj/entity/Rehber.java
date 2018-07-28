@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Rehber.findBySoyad", query = "SELECT r FROM Rehber r WHERE r.soyad = :soyad")
     , @NamedQuery(name = "Rehber.findByNo", query = "SELECT r FROM Rehber r WHERE r.no = :no")
     , @NamedQuery(name = "Rehber.findByMahalle", query = "SELECT r FROM Rehber r WHERE r.mahalle = :mahalle")
-    , @NamedQuery(name = "Rehber.findBy\u015eehir", query = "SELECT r FROM Rehber r WHERE r.\u015fehir = :\u015fehir")
+    , @NamedQuery(name = "Rehber.findBySehir", query = "SELECT r FROM Rehber r WHERE r.sehir = :sehir")
     , @NamedQuery(name = "Rehber.findByDogtar", query = "SELECT r FROM Rehber r WHERE r.dogtar = :dogtar")
     , @NamedQuery(name = "Rehber.findByEmail", query = "SELECT r FROM Rehber r WHERE r.email = :email")
     , @NamedQuery(name = "Rehber.findByTel", query = "SELECT r FROM Rehber r WHERE r.tel = :tel")
@@ -52,8 +52,8 @@ public class Rehber implements Serializable {
     @Column(name = "mahalle")
     private String mahalle;
     @Size(max = 30)
-    @Column(name = "\u015fehir")
-    private String şehir;
+    @Column(name = "sehir")
+    private String sehir;
     @Column(name = "dogtar")
     @Temporal(TemporalType.DATE)
     private Date dogtar;
@@ -115,12 +115,12 @@ public class Rehber implements Serializable {
         this.mahalle = mahalle;
     }
 
-    public String getŞehir() {
-        return şehir;
+    public String getSehir() {
+        return sehir;
     }
 
-    public void setŞehir(String şehir) {
-        this.şehir = şehir;
+    public void setSehir(String sehir) {
+        this.sehir = sehir;
     }
 
     public Date getDogtar() {
