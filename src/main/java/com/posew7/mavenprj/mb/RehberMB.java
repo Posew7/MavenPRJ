@@ -6,6 +6,7 @@ import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.ejb.EJB;
 
 @Named(value = "rehberMB")
@@ -126,7 +127,7 @@ public class RehberMB implements Serializable {
         rehberFacade.create(r);
 
         temizle();
-        
+
         return "";
     }
 
@@ -143,6 +144,11 @@ public class RehberMB implements Serializable {
         bilgi = "";
 
         return "";
+    }
+
+    public List<Rehber> listele() {
+
+        return rehberFacade.findAll();
     }
 
 }
