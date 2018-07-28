@@ -32,6 +32,13 @@
                     </p:growl>
 
                     <p:panelMenu style="width:300px">
+                        <p:submenu label="Java">
+                            <p:menuitem value="Örmek 1" action="#"  ajax="false" icon="ui-icon-bullet"/>
+                            <p:menuitem value="Örmek 2" action="#"  ajax="false" icon="ui-icon-bullet"/>
+                            <p:menuitem value="Örmek 3" action="#"  ajax="false" icon="ui-icon-bullet"/>
+                            <p:menuitem value="Örmek 4" action="#"  ajax="false" icon="ui-icon-bullet"/>
+                            <p:menuitem value="Örmek 5" action="#"  ajax="false" icon="ui-icon-bullet"/>
+                        </p:submenu>
                         <p:submenu label="Rehber">
                             <p:menuitem value="Ekle" action="#" icon="ui-icon-disk" />
                             <p:menuitem value="Sil" action="#"  icon="ui-icon-close" />
@@ -53,7 +60,7 @@
                             <p:submenu label="Links" icon="ui-icon-extlink">
                                 <p:menuitem value="Github" url="https://github.com/Posew7" icon="ui-icon-wrench" />
                                 <p:menuitem value="Youtube" url="https://www.youtube.com/channel/UCKf3B__nfvvBegwRySkh_Jg" icon="ui-icon-home" />
-                                </p:submenu>
+                            </p:submenu>
                             <p:submenu label="Mobile" icon="ui-icon-signal">
                                 <p:menuitem value="+90 506 027 02 37"/>
                             </p:submenu>
@@ -64,7 +71,7 @@
             </p:layoutUnit>
 
             <p:layoutUnit position="center">
-                <ui:insert name="content">Content</ui:insert>
+                <ui:insert name="content"></ui:insert>
             </p:layoutUnit>
 
         </p:layout>
