@@ -20,4 +20,20 @@ public class GirisFacade extends AbstractFacade<Giris> {
         super(Giris.class);
     }
 
+    public boolean giriseYetkiliMi(String p_kullanici) {
+
+        try {
+            Giris g = em.createNamedQuery("Giris.findByKullanici", Giris.class).setParameter("kullanici", p_kullanici).getSingleResult();
+
+            if (g != null) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            return false;
+        }
+
+    }
+
 }
