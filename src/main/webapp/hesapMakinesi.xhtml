@@ -1,14 +1,38 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <body>
 
         <ui:composition template="./template.xhtml">
 
             <ui:define name="content">
-                content
+
+                <h:form id="hesapMakinesiForm">
+                    <div align="left">
+                        <p:panelGrid columns="2">
+                            <f:facet name="header">
+                                <div align="center">
+                                    <p:outputLabel value="#{eglenceMB.sonuc}"/>
+                                </div>
+                            </f:facet>
+
+                            <p:inputText value="#{eglenceMB.sayi1}"/>
+                            <p:inputText value="#{eglenceMB.sayi2}"/>
+
+                            <p:commandButton value="+" action="#{eglenceMB.topla()}" update="hesapMakinesiForm"/>
+                            <p:commandButton value="-" action="#{eglenceMB.cikar()}" update="hesapMakinesiForm"/>
+                            <p:commandButton value="X" action="#{eglenceMB.carp()}" update="hesapMakinesiForm"/>
+                            <p:commandButton value="/" action="#{eglenceMB.bol()}" update="hesapMakinesiForm"/>
+
+                        </p:panelGrid>
+                    </div>
+                </h:form>
+
             </ui:define>
 
         </ui:composition>
