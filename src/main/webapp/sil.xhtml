@@ -1,14 +1,45 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <body>
 
         <ui:composition template="./template.xhtml">
 
             <ui:define name="content">
-                content
+                <h:form id="silForm">
+                    <div align="left">
+                        <p:panelGrid columns="3">
+                            <p:outputLabel value="ID Giriniz"/>
+                            <p:inputText value="#{rehberMB.id}"
+                                         id="id"
+                                         required="true"
+                                         requiredMessage="boş geçilemez"/>
+                            <p:message for="id"/>
+
+                            <p:outputLabel value="Ad"/>
+                            <p:inputText value="#{rehberMB.ad}"
+                                         id="ad"/>
+                            <p:message for="ad"/>
+
+                            <p:outputLabel value="Soyad"/>
+                            <p:inputText value="#{rehberMB.soyad}"
+                                         id="soyad"/>
+                            <p:message for="soyad"/>
+
+                            <f:facet name="footer">
+                                <div align="center">
+                                    <p:commandButton value="GETİR" action="#{rehberMB.getir()}" update="silForm"/>
+                                    <p:commandButton value="SİL" action="#{rehberMB.sil()}" update="silForm"/>
+                                </div>
+                            </f:facet>
+                        </p:panelGrid>
+                    </div>
+                </h:form>
             </ui:define>
 
         </ui:composition>

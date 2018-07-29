@@ -151,4 +151,27 @@ public class RehberMB implements Serializable {
         return rehberFacade.findAll();
     }
 
+    public String getir() {
+
+        Rehber r = rehberFacade.find(id);
+
+        ad = r.getAd();
+        soyad = r.getSoyad();
+
+        return "";
+    }
+    
+    public String sil(){
+        
+        Rehber r = new Rehber();
+        
+        r.setId(id);
+        
+        rehberFacade.remove(r);
+        
+        temizle();
+        
+        return "";
+    }
+
 }
